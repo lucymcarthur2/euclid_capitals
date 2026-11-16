@@ -1,0 +1,148 @@
+import os
+import random
+import xml.etree.ElementTree as ET
+from PIL import Image, ImageOps
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Paths to necessary files and directories
+false_positive_image_path = r"data\jpegs_cropped\32811_025.jpg"
+false_positive_xml_path = r"data\squished_capitals.xml"
+blank_image_path = r"data\jpegs_cropped\32811_013.jpg"
+
+output_image_dir = r"data\mock_labels"
+output_xml_dir = r"data\xmls"
+
+# Open necessary images
+false_positive_image = Image.open(false_positive_image_path)
+blank_image = Image.open(blank_image_path)
+
+width, height = false_positive_image.size
+false_positive_image = false_positive_image.resize((width // 4, height // 4))
+blank_image = blank_image.resize((width // 4, height // 4))
+false_positive_image = false_positive_image.convert('RGBA')  # Convert image to RGBA
+blank_image = blank_image.convert('RGBA')  # Convert image to RGBA
+
+# Parse false positive XML to get bounding boxes
+tree = ET.parse(false_positive_xml_path)
+root = tree.getroot()
+bounding_boxes = []
+for obj in root.findall('object'):
+    bbox = obj.find('bndbox')
+    xmin = int(float(bbox.find('xmin').text)) // 4
+    ymin = int(float(bbox.find('ymin').text))  // 4
+    xmax = int(float(bbox.find('xmax').text))  // 4
+    ymax = int(float(bbox.find('ymax').text))  // 4
+    bounding_boxes.append((xmin, ymin, xmax, ymax))
+
+# Overlap checker function
+def is_overlap(box1, box2):
+    x1, y1, w1, h1 = box1
+    x2, y2, w2, h2 = box2
+    return x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2
+
+# Create 200 new images
+for i in range(200):
+    new_image = blank_image.copy()
+    new_boxes = []
+    annotation = ET.Element('annotation')
+
+    for bbox in bounding_boxes:
+        # Extract false positive area
+        false_positive_area = false_positive_image.crop(bbox)
+        w, h = false_positive_area.size
+
+        # Randomly select position in blank image
+        pos_x = pos_y = None
+        for _ in range(1000):
+            max_x = new_image.width - w
+            max_y = new_image.height - h
+            new_pos_x = random.randint(0, max_x)
+            new_pos_y = random.randint(0, max_y)
+            
+            # Check if bounding box overlaps with any existing box
+            if not any(is_overlap((new_pos_x, new_pos_y, w, h), box) for box in new_boxes):
+                pos_x = new_pos_x
+                pos_y = new_pos_y
+                new_boxes.append((pos_x, pos_y, w, h))
+                break
+
+        if pos_x is None:
+            continue  # Couldn't find a non-overlapping position within 1000 attempts
+
+        # Resize, rotate and adjust opacity
+        rotate_deg = random.uniform(0, 10)
+        width_resize_ratio = height_resize_ratio = random.uniform(0.8, 1.2)  # Adjust these values to your preference
+        opacity = random.randint(70, 255)  # Random opacity between 70 (almost transparent) and 255 (opaque)
+        
+        false_positive_area = false_positive_area.resize((int(w * width_resize_ratio), int(h * height_resize_ratio)), Image.ANTIALIAS)
+        false_positive_area = false_positive_area.rotate(rotate_deg, expand=1, resample=Image.BICUBIC, fillcolor=(255,255,255,0))  # Fillcolor set to transparent
+        
+        # Create alpha mask and adjust opacity
+        alpha = Image.new('L', false_positive_area.size, opacity)
+        false_positive_area.putalpha(alpha)
+
+        # Paste false positive area into new image
+        new_image.paste(false_positive_area, (pos_x, pos_y), false_positive_area)
+
+        # Create 'object' element and append it to 'annotation'
+        object_element = ET.SubElement(annotation, 'object')
+
+        # Add 'name' element (class label)
+        name = ET.SubElement(object_element, 'name')
+        name.text = 'false_positive'  # Replace with your actual class label
+
+        # Add 'pose', 'truncated', 'difficult' elements (typically not used, but required by the schema)
+        pose = ET.SubElement(object_element, 'pose')
+        pose.text = 'Unspecified'
+        truncated = ET.SubElement(object_element, 'truncated')
+        truncated.text = '0'
+        difficult = ET.SubElement(object_element, 'difficult')
+        difficult.text = '0'
+
+        # Add 'bndbox' element with 'xmin', 'ymin', 'xmax', 'ymax' elements
+        bndbox = ET.SubElement(object_element, 'bndbox')
+        xmin = ET.SubElement(bndbox, 'xmin')
+        xmin.text = str(pos_x)
+        ymin = ET.SubElement(bndbox, 'ymin')
+        ymin.text = str(pos_y)
+        xmax = ET.SubElement(bndbox, 'xmax')
+        xmax.text = str(pos_x + false_positive_area.width)
+        ymax = ET.SubElement(bndbox, 'ymax')
+        ymax.text = str(pos_y + false_positive_area.height)
+
+    # Save new image
+    new_image_path = os.path.join(output_image_dir, f'blank_{i}_capital.png')  # PNG format is used to save transparency information
+    #new_image.save(new_image_path)
+
+    # Display the new image
+    plt.imshow(new_image)
+    plt.show()
+
+    # Create corresponding XML
+    folder = ET.SubElement(annotation, 'folder')
+    folder.text = output_image_dir
+
+    filename = ET.SubElement(annotation, 'filename')
+    filename.text = f'blank_{i}.png'  # PNG format is used to save transparency information
+
+    source = ET.SubElement(annotation, 'source')
+    database = ET.SubElement(source, 'database')
+    database.text = 'Unknown'
+
+    size = ET.SubElement(annotation, 'size')
+    width_node = ET.SubElement(size, 'width')
+    width_node.text = str(new_image.width)
+
+    height_node = ET.SubElement(size, 'height')
+    height_node.text = str(new_image.height)
+
+    depth_node = ET.SubElement(size, 'depth')
+    depth_node.text = '4'  # Changed to 4 since we're using RGBA mode
+
+    segmented = ET.SubElement(annotation, 'segmented')
+    segmented.text = '0'
+
+    tree = ET.ElementTree(annotation)
+    #new_xml_path = os.path.join(output_xml_dir, f'blank_{i}.xml')
+    #tree.write(new_xml_path, encoding='utf-8')

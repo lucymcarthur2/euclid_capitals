@@ -1,0 +1,13 @@
+# data, weights and generated files are not tracked (see README: Data / Releases)
+data/
+fonts/
+*.pth
+*.pt
+*.tif
+*.tiff
+initials_studio/workspace/
+initials_studio/examples/
+initials_studio/.venv/
+__pycache__/
+*.pyc
+.DS_Store

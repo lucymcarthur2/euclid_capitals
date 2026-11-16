@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Initials Studio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23221f1a'/><text x='16' y='23' font-family='Georgia' font-size='20' fill='%23fffdf8' text-anchor='middle'>A</text></svg>">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark" aria-hidden="true">A</span>Initials Studio</div>
+  <nav aria-label="Sections">
+    <button data-view="library" aria-current="page">Library</button>
+    <button data-view="review">Review</button>
+    <button data-view="patterns">Woodblocks</button>
+    <button data-view="settings">Settings</button>
+    <button data-view="method">About the model</button>
+  </nav>
+  <span class="spacer"></span>
+  <button class="jobpill" id="jobpill" title="Show background tasks"><span class="spin"></span><span class="msg" id="jobmsg"></span><span class="bar"><i id="jobbar"></i></span></button>
+</header>
+
+<main>
+  <!-- ================= LIBRARY ================= -->
+  <section class="view on" id="v-library">
+    <div class="head"><div><h1>Library</h1>
+      <p>Upload scanned books as PDFs or page images. Initials Studio finds the decorated initials, flags anything that looks doubtful for you to check, and groups them by the woodblock they were printed from.</p></div></div>
+    <div class="card upload">
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose PDFs or images to upload">
+        <div><h2>Drop PDFs or page images here</h2>
+          <div class="muted">or click to choose files · PDF, JPG, PNG, TIFF</div>
+          <div class="files" id="filelist"></div></div>
+        <input type="file" id="files" multiple accept=".pdf,image/*" hidden>
+      </div>
+      <form id="upform">
+        <label class="field">Title <input type="text" id="u-title" placeholder="e.g. Hyginus, Poeticon astronomicon"></label>
+        <label class="field">Printer <input type="text" id="u-printer" placeholder="e.g. Thomas de Blavis"></label>
+        <label class="field">Date / place <input type="text" id="u-date" placeholder="e.g. Venice, 1488"></label>
+        <label class="check"><input type="checkbox" id="u-split" checked> Several PDFs: make one book per PDF (titles from the file names)</label>
+        <button class="btn primary" id="u-go" disabled>Upload and find capitals</button>
+        <div class="small muted">Everything stays on this computer. Reading takes a few seconds per page.</div>
+      </form>
+    </div>
+    <div class="section-title"><h2>Your books</h2><span class="muted small" id="lib-count"></span></div>
+    <div class="books" id="books"></div>
+  </section>
+
+  <!-- ================= REVIEW ================= -->
+  <section class="view" id="v-review">
+    <div class="head"><div><h1 id="r-title">Review</h1><p id="r-sub" class="muted"></p></div></div>
+    <div class="toolbar">
+      <select id="r-book" aria-label="Book"></select>
+      <div class="seg" role="group" aria-label="View">
+        <button id="r-grid" aria-pressed="true">Capitals</button><button id="r-pages" aria-pressed="false">Pages</button>
+      </div>
+      <select id="r-filter" aria-label="Show">
+        <option value="flagged">Needs a look (flagged)</option>
+        <option value="all">All capitals</option>
+        <option value="kept">Confirmed</option>
+        <option value="rejected">Thrown out</option>
+        <option value="below">Below the cut-off (possible misses)</option>
+      </select>
+      <span class="spacer"></span>
+      <span class="small muted" id="r-count"></span>
+      <button class="btn sm" id="r-keepall" title="Confirm every capital shown">Confirm all shown</button>
+      <button class="btn sm bad" id="r-rejsel" disabled>Throw out selected</button>
+    </div>
+    <div id="r-body"></div>
+  </section>
+
+  <!-- ================= PATTERNS ================= -->
+  <section class="view" id="v-patterns">
+    <div class="head"><div><h1>Woodblocks</h1>
+      <p>Each card is one physical woodblock: every impression printed from it, across all your books. Blocks can be printed turned (shown here turned back, with a ↻ badge); a mirror-image match is never the same block, so it is listed as a possible recut copy.</p></div>
+      <span class="spacer"></span>
+      <a class="btn" href="/api/export/csv">Export CSV</a>
+      <a class="btn" href="/api/export/zip">Export images (zip)</a>
+    </div>
+    <div class="card picker">
+      <div class="picker-head"><h2>Books to compare</h2>
+        <button class="btn sm ghost" id="g-all">Select all</button><button class="btn sm ghost" id="g-none">Clear</button>
+        <span class="spacer"></span>
+        <button class="btn" id="g-rebuild" title="Discards your manual moves for these books">Regroup selected from scratch</button>
+        <button class="btn primary" id="g-update">Compare selected books</button></div>
+      <div class="picker-books" id="g-picker"></div>
+      <div class="picker-note" id="g-note"></div>
+    </div>
+    <div class="stats" id="g-stats"></div>
+    <div class="toolbar">
+      <select id="g-filter" aria-label="Which woodblocks">
+        <option value="cross">Shared between printers</option>
+        <option value="multi">Used in more than one book</option>
+        <option value="unclear">With unclear matches</option>
+        <option value="all">All woodblocks</option>
+      </select>
+      <span class="spacer"></span><span class="small muted" id="g-count"></span>
+    </div>
+    <div class="groups" id="groups"></div>
+  </section>
+
+  <!-- ================= SETTINGS ================= -->
+  <section class="view" id="v-settings">
+    <div class="head"><div><h1>Settings</h1><p>Changes to the cut-off and flags apply instantly. Grouping parameters apply the next time you update the grouping.</p></div>
+      <span class="spacer"></span><button class="btn" id="s-reset">Reset to defaults</button></div>
+    <div class="settings" id="settings"></div>
+  </section>
+
+  <!-- ================= ABOUT THE MODEL ================= -->
+  <section class="view" id="v-method">
+    <div class="doc-wrap">
+    <nav class="toc card" aria-label="Contents">
+      <b>Contents</b>
+      <a href="#m-overview">1. Overview</a>
+      <a href="#m-data">2. Training data</a>
+      <a href="#m-detector">3. The detector</a>
+      <a href="#m-eval">4. How it was tested</a>
+      <a href="#m-results">5. Results</a>
+      <a href="#m-compare">6. Compared with earlier models</a>
+      <a href="#m-flags">7. Flags</a>
+      <a href="#m-grouping">8. Grouping by woodblock</a>
+      <a href="#m-findings">9. First findings</a>
+      <a href="#m-assume">10. Assumptions</a>
+      <a href="#m-limits">11. Limitations</a>
+    </nav>
+    <article class="doc">
+      <h1>About the model</h1>
+      <p class="lede">How Initials Studio finds decorated initials, how well it does it, what it assumes, and how it decides that two initials were printed from the same woodblock.</p>
+
+      <h2 id="m-overview">1. Overview</h2>
+      <p>The question behind the tool is bibliographical: did printers in late-fifteenth-century Venice share, sell or inherit their woodcut initials? If the same physical block appears in books by two printers, it passed between them. Answering this by eye means comparing thousands of initials, so the work is split into two automatic steps, each checked by a person:</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 120" role="img" aria-label="Pipeline: pages, detector, review, block matching, woodblocks">
+          <g font-family="system-ui, sans-serif" font-size="13" text-anchor="middle">
+            <g><rect x="2" y="30" width="120" height="58" rx="10" class="d-box"/><text x="62" y="55" class="d-t">Scanned pages</text><text x="62" y="74" class="d-s">PDF or images</text></g>
+            <g><rect x="160" y="30" width="130" height="58" rx="10" class="d-box d-acc"/><text x="225" y="55" class="d-t">1. Detector</text><text x="225" y="74" class="d-s">boxes + confidence</text></g>
+            <g><rect x="328" y="30" width="120" height="58" rx="10" class="d-box"/><text x="388" y="55" class="d-t">Flags + review</text><text x="388" y="74" class="d-s">keep / throw out</text></g>
+            <g><rect x="486" y="30" width="130" height="58" rx="10" class="d-box d-acc"/><text x="551" y="55" class="d-t">2. Block matching</text><text x="551" y="74" class="d-s">align + compare</text></g>
+            <g><rect x="654" y="30" width="104" height="58" rx="10" class="d-box"/><text x="706" y="55" class="d-t">Woodblocks</text><text x="706" y="74" class="d-s">+ your edits</text></g>
+            <g class="d-arrow"><path d="M124 59h32M292 59h32M450 59h32M618 59h32"/></g>
+          </g>
+        </svg>
+      </figure>
+      <ol>
+        <li><b>Detection.</b> A neural network finds every decorated initial on every page and draws a box round it with a confidence score. Doubtful boxes are flagged for a person to keep or throw out.</li>
+        <li><b>Block matching.</b> Every initial is compared with every other, in every orientation. Initials printed from the same block are grouped into one woodblock. A person can move impressions between groups.</li>
+      </ol>
+
+      <h2 id="m-data">2. Training data</h2>
+      <p>The detector was trained only on <b>real scanned pages</b>, not on synthetic pages made by pasting letters onto backgrounds. Synthetic pages were the approach of the earlier dissertation model. Real pages carry the things that make detection hard: bleed-through, uneven inking, page curvature, woodcut pictures and diagrams next to the text.</p>
+      <table>
+        <thead><tr><th>Book (all printed by Erhard Ratdolt)</th><th>Pages</th><th>Capitals</th><th>Role</th><th>How it was labelled</th></tr></thead>
+        <tbody>
+          <tr><td>Euclid, <i>Elementa</i>, Venice 1482</td><td>280</td><td>510</td><td>main training and test book</td><td>dissertation bounding boxes, checked page by page; two pages corrected (one missing capital added, one wrong box fixed)</td></tr>
+          <tr><td>Ptolemy</td><td>222</td><td>306</td><td>extra training</td><td>boxes recovered from the dissertation's hand-sorted crops by template matching; 3 capitals the sort had missed were added</td></tr>
+          <tr><td>Albumasar</td><td>63</td><td>11</td><td>extra training: hard negatives</td><td>every detection judged by eye; every page checked for misses</td></tr>
+          <tr><td>Boethius, <i>Arithmetica</i></td><td>106</td><td>11</td><td>extra training: hard negatives</td><td>as above, plus an independent second opinion from a classical model, which found 3 more</td></tr>
+          <tr class="total"><td>Total</td><td>671</td><td>838</td><td colspan="2"></td></tr>
+        </tbody>
+      </table>
+      <p><b>Label policy.</b> Only <b>paragraph initials</b> count as capitals: the small woodcut letters, about two to five text lines high, that open a paragraph. Large chapter-opening initials, woodcut pictures (zodiac roundels, sun faces, animals, diagrams), plain printed letters and hand-painted initials are <i>not</i> capitals. Anything in a picture that is not labelled teaches the model what to ignore. This is why Albumasar and the <i>Arithmetica</i> were added: they hold few capitals but many woodcuts that look like capitals from a distance.</p>
+      <p><b>Kept out of training on purpose:</b> <i>Compilatio</i>, <i>Artes orandi</i>, <i>Judgement of the Stars</i> and every non-Ratdolt book. They are used only for testing, so their scores show how the model does on books it has never seen.</p>
+
+      <h2 id="m-detector">3. The detector</h2>
+      <p><b>Architecture.</b> Faster R-CNN with a MobileNetV3-Large backbone and a feature pyramid (18.9 million parameters). It starts from weights pre-trained on the COCO photo dataset, so it already knows edges, textures and shapes, and was fine-tuned to a single class, "capital". A two-stage detector suits this task: the first stage proposes candidate regions, and the second decides for each one whether it is an initial and refines the box. The lightweight MobileNet backbone was chosen so that training and use are practical on an ordinary CPU, with no GPU.</p>
+      <p><b>Input.</b> Each page is resized so its long side is 1024 pixels. At that size a typical initial is 60-100 pixels across: plenty for the detector, and about 0.3-0.5 seconds per page on a laptop.</p>
+      <p><b>Augmentation.</b> Every training page is randomly changed each time it is seen, so the model learns to cope with other copies and other scans:</p>
+      <ul class="cols">
+        <li>contrast, brightness and gamma</li><li>paper-tone colour cast</li><li>greyscale (30%)</li><li>blur, as from lower-resolution scans (30%)</li>
+        <li>sensor and paper noise (30%)</li><li>left-right flip (50%)</li><li>hue and saturation shift, as for hand-coloured copies (30%)</li><li>zoom 0.7-1.5×, for other page sizes (60%)</li>
+      </ul>
+      <p><b>Training.</b> SGD with momentum 0.9, weight decay 10<sup>-4</sup>, learning rate 0.01 with a 50-step warm-up and cosine decay, batch size 4, 8 epochs. Gradients are clipped, and the rare non-finite batch is skipped. All settings are standard fine-tuning defaults fixed in advance, not tuned on any test book. Training takes about 2 hours on a 4-core laptop CPU.</p>
+
+      <h2 id="m-eval">4. How it was tested</h2>
+      <ul>
+        <li><b>Euclid: 5-fold cross-validation.</b> The 280 pages were split into 5 blocks of consecutive pages. For each block, a model was trained on the other four and tested on it, so every page is scored by a model that never saw it. Consecutive blocks are used, rather than random pages, because neighbouring pages share capitals and layout; random splits would flatter the model.</li>
+        <li><b>The confidence cut-off</b> was chosen only on the training folds (the one giving the best F1) and then applied to the held-out fold. The single cut-off this produced over all of Euclid, <b>0.94</b>, is the "strict" setting.</li>
+        <li><b>Unseen books</b> are scored with no change to the model.</li>
+        <li><b>Matching:</b> a detection counts as correct if its box overlaps a true capital by at least 50% (intersection over union ≥ 0.5). Each true capital can be matched once.</li>
+      </ul>
+      <p>Measures used:</p>
+      <dl class="defs">
+        <dt>Precision</dt><dd>Of the boxes shown, the share that are real capitals. Low precision means false alarms to throw out.</dd>
+        <dt>Recall</dt><dd>Of the real capitals, the share found. Low recall means misses.</dd>
+        <dt>F1</dt><dd>One number balancing the two.</dd>
+        <dt>AP50</dt><dd>Average precision over every cut-off. It measures how well real capitals are ranked above everything else, independent of the cut-off.</dd>
+        <dt>AP50-95</dt><dd>The same, but also rewarding tight boxes: averaged over overlap requirements from 50% to 95%.</dd>
+      </dl>
+
+      <h2 id="m-results">5. Results</h2>
+      <table>
+        <thead><tr><th>Book</th><th>Capitals</th><th>Cut-off</th><th>Found</th><th>Missed</th><th>False alarms</th><th>Precision</th><th>Recall</th><th>F1</th><th>AP50</th></tr></thead>
+        <tbody>
+          <tr><td>Euclid (cross-validated)</td><td>510</td><td>per fold</td><td>507</td><td>3</td><td>0</td><td>1.000</td><td>0.994</td><td><b>0.997</b></td><td>0.990</td></tr>
+          <tr><td rowspan="2"><i>Compilatio</i> (unseen)</td><td rowspan="2">109</td><td>0.5</td><td>106</td><td>3</td><td>3</td><td>0.972</td><td>0.972</td><td><b>0.972</b></td><td rowspan="2">0.993</td></tr>
+          <tr><td>0.94</td><td>103</td><td>6</td><td>3</td><td>0.972</td><td>0.945</td><td>0.958</td></tr>
+          <tr><td rowspan="2"><i>Artes orandi</i> (unseen)</td><td rowspan="2">93</td><td>0.5</td><td>93</td><td>0</td><td>8</td><td>0.921</td><td>1.000</td><td>0.959</td><td rowspan="2">1.000</td></tr>
+          <tr><td>0.94</td><td>93</td><td>0</td><td>1</td><td>0.989</td><td>1.000</td><td><b>0.995</b></td></tr>
+          <tr><td><i>Judgement of the Stars</i> (unseen; photos of an open book)</td><td>362</td><td>0.5</td><td>362</td><td>0</td><td>2</td><td>0.995</td><td>1.000</td><td><b>0.997</b></td><td></td></tr>
+        </tbody>
+      </table>
+      <p>Boxes are tight: found capitals overlap the hand-drawn box by 94% on average (Euclid AP50-95 0.907). On unseen books, <b>0.5</b> is the better default. The strict 0.94 was tuned on Euclid, where the model is very confident; on new books it mainly adds misses (6 instead of 3 on <i>Compilatio</i>). Seven of the 8 false alarms on <i>Artes</i> at 0.5 are on a single chessboard page.</p>
+      <p class="note"><b>A note on the labels.</b> Euclid, <i>Compilatio</i> and <i>Artes</i> are scored against labels checked by a person. <i>Judgement of the Stars</i> was labelled with the model's help and checked page by page, so its score is less independent. The non-Ratdolt books from 1488 (de Blavis, Santritter) have not been formally labelled; a visual check of the de Blavis Hyginus found 104 capitals, 2 false alarms and no misses.</p>
+
+      <h2 id="m-compare">6. Compared with earlier models</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Euclid F1</th><th><i>Compilatio</i> F1</th><th><i>Artes</i> F1</th><th>Speed</th></tr></thead>
+        <tbody>
+          <tr><td><b>This detector</b> (real pages + hard negatives)</td><td><b>0.997</b></td><td><b>0.972</b> (3 false alarms)</td><td><b>0.995</b> (strict)</td><td><b>0.4 s/page</b></td></tr>
+          <tr><td>Dissertation model (ResNet-50 Faster R-CNN, synthetic pages, cut-off 0.99)</td><td>0.986</td><td>0.781 (61 false alarms)</td><td>0.968</td><td>3-5.5 s/page</td></tr>
+          <tr><td>Classical baseline (ink-blob proposals + gradient-boosted classifier)</td><td>0.906</td><td>0.725</td><td>0.856</td><td></td></tr>
+        </tbody>
+      </table>
+      <p>The dissertation model finds nearly every capital, including all of <i>Compilatio</i>'s, and draws slightly tighter boxes (AP50-95 0.99 on Euclid). Its weakness on new books is false alarms on woodcut pictures, because it never saw real pages in training. The two changes that mattered most here were <b>training on real pages</b> and <b>adding books full of non-capital woodcuts</b>. On <i>Compilatio</i> and <i>Artes</i>, the second change alone cut false alarms by about 80%.</p>
+
+      <h2 id="m-flags">7. Flags: when the model asks for a second look</h2>
+      <p>Each box is checked against simple rules, and anything unusual is flagged in Review. The thresholds are in Settings.</p>
+      <table>
+        <tbody>
+          <tr><td>Low confidence</td><td>Confidence below 0.9 (adjustable). Damaged, faint or unusual initials, or look-alikes.</td></tr>
+          <tr><td>Unusual size for this book</td><td>More than 2.2× bigger or smaller than the book's typical capital. Usually a chapter initial, a picture, or a box round two letters.</td></tr>
+          <tr><td>Not square</td><td>Width-to-height ratio outside 0.6-1.65. Woodcut initials are nearly square blocks.</td></tr>
+          <tr><td>No clear woodcut frame</td><td>The dark ink doesn't form a block spanning the box. Printed letters, diagrams, show-through.</td></tr>
+          <tr><td>Faint</td><td>Far less contrast than the book's other capitals. Often ink showing through from the other side of the leaf.</td></tr>
+          <tr><td>Overlap / page edge</td><td>Duplicate or cut-off detections.</td></tr>
+          <tr><td>Unclear block match</td><td>Close to a woodblock, but not convincingly the same impression (see 8).</td></tr>
+          <tr><td>Mirror image</td><td>Matches another initial only when mirrored, so it is a recut, reversed copy (see 8).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="m-grouping">8. Grouping by woodblock</h2>
+      <p><b>The idea.</b> Every impression of one block reproduces the same cut design, line for line, along with the block's cracks and breaks once it ages. A copy cut by another hand may follow the same pattern but differs in the detail of the vine work. So the method aligns two initials precisely and measures how much of the design coincides.</p>
+      <ol>
+        <li><b>Normalise.</b> Each initial is cropped to its own black frame, squared to 160 × 160 pixels and contrast-equalised. The ink is separated from the paper (Otsu threshold) and slightly blurred, to tolerate ink spread and wear.</li>
+        <li><b>Quick pre-check.</b> Tiny 24 × 24 versions of every initial are compared in all 8 orientations (4 rotations, each also mirrored) in a single matrix product. Each initial keeps its closest candidates (60 by default). On Euclid this keeps about 98% of true same-block pairs while skipping about 90% of the work.</li>
+        <li><b>Precise comparison.</b> Each candidate pair is aligned with ECC image registration, which allows a small shift, scale and skew between impressions. The score is the correlation of the two aligned ink patterns: 1 means identical, 0 means unrelated.</li>
+        <li><b>Grouping.</b> Initials are clustered with <b>average linkage</b> at a score of 0.70. A group's impressions must match each other <i>on average</i>. A simpler "friend of a friend" rule let one smudged look-alike chain two different S blocks together.</li>
+      </ol>
+      <p><b>Calibration.</b> Euclid provides the evidence, because Ratdolt printed each block many times in it. Median scores between impressions grouped together:</p>
+      <table>
+        <tbody>
+          <tr><td>Same block, same book</td><td>0.92</td></tr>
+          <tr><td>Same block, two different Ratdolt books</td><td>0.87</td></tr>
+          <tr><td>Same block, a Ratdolt book and a later Venetian printer's</td><td>0.76-0.78</td></tr>
+          <tr><td>Different designs, even of the same letter</td><td>below 0.5</td></tr>
+        </tbody>
+      </table>
+      <p>Scores between 0.5 and 0.7 are flagged <i>unclear</i>: a worn block, a poor scan, or a close copy. These need a person's eye, using the side-by-side comparison.</p>
+      <p><b>Orientation.</b> Blocks are sometimes set turned, upside down or sideways, so all four rotations are tested. The dissertation also noted a V block used upside down as an A. A block can never print <b>mirror-reversed</b>, though, so a match that only works mirrored is reported as a possible recut copy, never as the same block.</p>
+      <p class="note">The grouping has not yet been scored against an expert's block-by-block grouping. On Euclid it finds 79 blocks, where the dissertation's ORB-based grouping found 56; this method tends to split rather than merge. Merging the obvious splits in the Woodblocks view, and recording the edits, would give exactly that accuracy measurement.</p>
+
+      <h2 id="m-findings">9. First findings</h2>
+      <p>Across 1,677 initials from the bundled books, 22 woodblocks appear both in Ratdolt's books and in books printed by others in Venice in 1488, two years after Ratdolt had moved to Augsburg:</p>
+      <ul>
+        <li><b>Thomas de Blavis</b>, Hyginus, 1488: 38 of 105 initials are from 10 blocks Ratdolt used. Older bibliography reports that de Blavis acquired some of Ratdolt's worn initials.</li>
+        <li><b>Santritter &amp; de Sanctis</b>, Jandun and Aquinas, 1488: 89 of 168 initials are from 10 Ratdolt blocks. Santritter had contributed verses to Ratdolt's own books, which points to a direct link with the shop.</li>
+        <li><b>Johannes Hamman</b>, <i>Tabulae</i>, 1492: no Ratdolt blocks.</li>
+      </ul>
+      <p>These are provisional until each shared woodblock has been checked by eye.</p>
+
+      <h2 id="m-assume">10. Assumptions</h2>
+      <ul>
+        <li>Initials of interest are <b>woodcut paragraph initials</b> in the Venetian white-on-black vine style; the label policy above defines what counts.</li>
+        <li>A scan shows a typical initial at about <b>40 pixels or more</b> across after the page is resized to 1024 pixels.</li>
+        <li>Two impressions of one block differ only in position, small scale and skew, inking, paper and wear, and are <b>never mirrored</b>.</li>
+        <li>A high match score means the same physical block. A very careful recut copy could in principle score high too. The crack-and-break evidence in the large comparison view is the final test.</li>
+        <li>The printer recorded for each book is correct: the "shared between printers" view depends on it.</li>
+      </ul>
+
+      <h2 id="m-limits">11. Limitations</h2>
+      <ul>
+        <li>Trained on Ratdolt's books, so other styles (northern European, later, or black-on-white initials) may be found less reliably. Labelling a few dozen pages of a new style and retraining fixes this best.</li>
+        <li>Heavily hand-coloured copies lower the confidence. Use a lower cut-off and check the flags.</li>
+        <li>Hand-painted initials and plain printed letters are deliberately not detected.</li>
+        <li>Block matching is visual. Badly worn blocks or very different scans can fall into the <i>unclear</i> band.</li>
+        <li>Everything runs on the CPU. Matching thousands of initials takes minutes to tens of minutes; adding a book only compares the new initials.</li>
+      </ul>
+    </article>
+    </div>
+  </section>
+</main>
+
+<div class="dock" id="dock"><b id="dock-n"></b><span class="muted">selected</span>
+  <button class="btn" id="dock-new">Make a new woodblock from these</button>
+  <span class="muted small">or press <b>Move here</b> on another card</span>
+  <button class="btn bad" id="dock-rej">Not a capital</button>
+  <span class="spacer"></span><button class="btn ghost" id="dock-clear">Clear selection</button></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="card" id="modal-body"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

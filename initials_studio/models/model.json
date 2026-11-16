@@ -1,0 +1,12 @@
+{
+  "weights": "capitals_mbv3_v2.pth",
+  "name": "Woodcut initial detector v2",
+  "description": "Faster R-CNN (MobileNetV3-Large FPN, COCO-pretrained) fine-tuned on real pages of Euclid's Elements (Ratdolt, Venice 1482) plus three Ratdolt-era books (Ptolemy, Albumasar, Boethius' Arithmetica) whose woodcut pictures teach it what is not a capital. Label policy: paragraph initials only; chapter initials are not counted. Runs on CPU at about 0.3-0.5 s per page.",
+  "facts": [
+    "Euclid (5-fold cross-validation, 510 capitals): F1 0.997 - 507 found, 3 missed, 0 false alarms.",
+    "Compilatio (unseen, 109 capitals): F1 0.97 at cut-off 0.5 - 3 missed, 3 false alarms.",
+    "Artes Orandi (unseen, 93 capitals): all found; 8 false alarms at 0.5, 1 at 0.94.",
+    "Judgement of the Stars (unseen, 362 capitals, photos of an open book): all found, 2 false alarms.",
+    "Recommended cut-off for new books: 0.5. Strict (Euclid-tuned): 0.94."
+  ]
+}

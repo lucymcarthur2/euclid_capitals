@@ -1,0 +1,412 @@
+{
+ "page_10": {
+  "verdicts": [
+   false
+  ],
+  "added": [
+   [
+    146,
+    164,
+    433,
+    472
+   ]
+  ],
+  "checked": true
+ },
+ "page_11": {
+  "verdicts": [],
+  "added": [
+   [
+    140,
+    138,
+    402,
+    438
+   ]
+  ],
+  "checked": true
+ },
+ "page_12": {
+  "verdicts": [],
+  "added": [
+   [
+    159,
+    156,
+    391,
+    414
+   ]
+  ],
+  "checked": true
+ },
+ "page_13": {
+  "verdicts": [],
+  "added": [
+   [
+    148,
+    147,
+    352,
+    399
+   ]
+  ],
+  "checked": true
+ },
+ "page_14": {
+  "verdicts": [],
+  "added": [
+   [
+    127,
+    1164,
+    434,
+    1496
+   ]
+  ],
+  "checked": true
+ },
+ "page_15": {
+  "verdicts": [],
+  "added": [
+   [
+    148,
+    153,
+    378,
+    412
+   ],
+   [
+    140,
+    783,
+    387,
+    1052
+   ],
+   [
+    125,
+    1304,
+    358,
+    1546
+   ]
+  ],
+  "checked": true
+ },
+ "page_16": {
+  "verdicts": [],
+  "added": [
+   [
+    157,
+    158,
+    408,
+    464
+   ],
+   [
+    143,
+    723,
+    436,
+    1026
+   ]
+  ],
+  "checked": true
+ },
+ "page_17": {
+  "verdicts": [],
+  "added": [
+   [
+    154,
+    1125,
+    412,
+    1416
+   ]
+  ],
+  "checked": true
+ },
+ "page_18": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_19": {
+  "verdicts": [],
+  "added": [
+   [
+    144,
+    148,
+    381,
+    398
+   ]
+  ],
+  "checked": true
+ },
+ "page_20": {
+  "verdicts": [],
+  "added": [
+   [
+    133,
+    156,
+    400,
+    414
+   ]
+  ],
+  "checked": true
+ },
+ "page_21": {
+  "verdicts": [],
+  "added": [
+   [
+    148,
+    156,
+    381,
+    406
+   ],
+   [
+    159,
+    1462,
+    347,
+    1674
+   ]
+  ],
+  "checked": true
+ },
+ "page_22": {
+  "verdicts": [],
+  "added": [
+   [
+    154,
+    1177,
+    397,
+    1426
+   ]
+  ],
+  "checked": true
+ },
+ "page_23": {
+  "verdicts": [],
+  "added": [
+   [
+    125,
+    1147,
+    374,
+    1397
+   ]
+  ],
+  "checked": true
+ },
+ "page_24": {
+  "verdicts": [],
+  "added": [
+   [
+    153,
+    242,
+    431,
+    524
+   ]
+  ],
+  "checked": true
+ },
+ "page_25": {
+  "verdicts": [],
+  "added": [
+   [
+    138,
+    176,
+    292,
+    320
+   ],
+   [
+    143,
+    393,
+    365,
+    647
+   ],
+   [
+    138,
+    671,
+    306,
+    872
+   ],
+   [
+    140,
+    995,
+    368,
+    1238
+   ]
+  ],
+  "checked": true
+ },
+ "page_26": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_27": {
+  "verdicts": [],
+  "added": [
+   [
+    146,
+    951,
+    421,
+    1232
+   ]
+  ],
+  "checked": true
+ },
+ "page_28": {
+  "verdicts": [],
+  "added": [
+   [
+    161,
+    239,
+    376,
+    477
+   ]
+  ],
+  "checked": true
+ },
+ "page_29": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_30": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_31": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_32": {
+  "verdicts": [],
+  "added": [
+   [
+    144,
+    275,
+    371,
+    521
+   ]
+  ],
+  "checked": true
+ },
+ "page_33": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_34": {
+  "verdicts": [],
+  "added": [
+   [
+    170,
+    1084,
+    404,
+    1329
+   ]
+  ],
+  "checked": true
+ },
+ "page_35": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_36": {
+  "verdicts": [],
+  "added": [
+   [
+    151,
+    977,
+    366,
+    1225
+   ]
+  ],
+  "checked": true
+ },
+ "page_37": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_38": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_39": {
+  "verdicts": [],
+  "added": [
+   [
+    159,
+    135,
+    376,
+    375
+   ]
+  ],
+  "checked": true
+ },
+ "page_40": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_41": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_42": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_43": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_44": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_45": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_46": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_47": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_48": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ },
+ "page_8": {
+  "verdicts": [],
+  "added": [
+   [
+    154,
+    150,
+    428,
+    446
+   ]
+  ],
+  "checked": false
+ },
+ "page_9": {
+  "verdicts": [],
+  "added": [
+   [
+    144,
+    160,
+    425,
+    440
+   ]
+  ],
+  "checked": false
+ }
+}

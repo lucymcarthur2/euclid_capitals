@@ -1,0 +1,1732 @@
+{
+ "page_3_right": {
+  "verdicts": [
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_4_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_4_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_7_right": {
+  "verdicts": [
+   true,
+   true,
+   false,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_8_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_9_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_9_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_10_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_10_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_11_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_11_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_12_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_12_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_13_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_14_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_15_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_16_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_16_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_17_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_17_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_18_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_18_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_19_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_19_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_20_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_20_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_21_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_22_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_22_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_23_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_24_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_24_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_26_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_26_right": {
+  "verdicts": [
+   true,
+   true,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_27_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_28_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_28_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_29_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_30_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_30_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_31_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_31_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_32_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_32_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_33_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_33_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_34_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_34_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_35_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_35_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_36_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_39_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_39_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_40_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_41_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_44_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_45_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_46_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_47_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_47_right": {
+  "verdicts": [
+   true,
+   true,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_48_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_49_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_49_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_50_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_50_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_51_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_52_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_54_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_54_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_55_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_55_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_56_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_59_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_60_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_60_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_61_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_61_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_62_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_62_right": {
+  "verdicts": [
+   false,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_63_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_63_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_64_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_65_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_66_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_67_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_68_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_70_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_71_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_71_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_73_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_74_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_74_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_76_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_78_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_78_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_79_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_80_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_81_right": {
+  "verdicts": [
+   true,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_83_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_83_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_84_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_84_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_86_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_88_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_89_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_91_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_92_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_93_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_94_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_95_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_96_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_98_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_100_left": {
+  "verdicts": [
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_100_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_101_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_105_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_109_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_109_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_110_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_110_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_111_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_111_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_112_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_113_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_114_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_114_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_116_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_116_right": {
+  "verdicts": [
+   true,
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_117_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_117_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_118_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_119_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_120_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_120_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_121_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_122_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_122_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_123_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_123_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_124_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_124_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_125_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_125_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_126_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_126_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_127_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_127_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_128_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_128_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_129_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_129_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_130_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_131_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_131_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_132_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_132_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_134_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_136_left": {
+  "verdicts": [
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_136_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_137_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_140_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_141_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_142_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_143_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_143_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_144_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_144_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_145_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_145_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_146_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_147_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_147_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_148_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_148_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_149_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_150_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_150_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_151_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_151_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_152_left": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_152_right": {
+  "verdicts": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_153_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_153_right": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_154_left": {
+  "verdicts": [
+   true,
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_154_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_155_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_155_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_156_left": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_156_right": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_157_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_158_left": {
+  "verdicts": [
+   true,
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_158_right": {
+  "verdicts": [
+   true
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_160_right": {
+  "verdicts": [
+   false
+  ],
+  "added": [],
+  "checked": true,
+  "by": "claude"
+ },
+ "page_0_left": {
+  "verdicts": [],
+  "added": [],
+  "checked": true
+ }
+}

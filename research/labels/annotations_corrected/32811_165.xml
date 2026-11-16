@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf8'?>
+<annotation><folder>annotations</folder><filename>32811_165.jpg</filename><size><width>3250</width><height>4314</height><depth>3</depth></size><object><name>object</name><bndbox><xmin>145</xmin><ymin>1506</ymin><xmax>436</xmax><ymax>1833</ymax></bndbox></object><object><name>object</name><bndbox><xmin>162</xmin><ymin>2281</ymin><xmax>424</xmax><ymax>2622</ymax></bndbox></object></annotation>
